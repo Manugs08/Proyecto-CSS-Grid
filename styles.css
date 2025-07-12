@@ -1,0 +1,327 @@
+*{
+    box-sizing: border-box;
+}
+
+body,div,main,h1,h2,p{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+
+    --purple100:hsl(254, 88%, 90%);
+    --purple500:hsl(256, 67%, 59%);
+    --yellow100:hsl(31, 66%, 93%);
+    --yellow500:hsl(39, 100%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 7%);
+    font-size: 18px;
+    background-color: #0004;
+    color: var(--black);
+    font-family: "DM Sans", sans-serif;
+    max-width: 1440px;
+}
+
+.main{
+    display: grid;
+    justify-content: center;
+    height: fit-content;
+    grid-template-columns: repeat(4,minmax(170px,220px));
+    grid-template-rows: repeat(4,minmax(80px,100px));
+    grid-template-areas:"bx1 bx2 bx2 bx3"
+                        "bx1 bx2 bx2 bx3"
+                        "bx1 bx4 bx5 bx3"
+                        "bx6 bx4 bx5 bx3"
+                        "bx6 bx7 bx8 bx8";
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.main__box{
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.bx1{
+    background-color: var(--yellow100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-area: bx1;
+    font-style: italic;
+    font-weight: 100;
+}
+.bx1__title{
+    max-width: 80%;
+    margin-bottom: 15px;
+}
+.bx1 span{
+    color:var(--purple500)
+}
+.bx1 img{
+    max-width: 80%;
+}
+.bx2{
+    grid-area: bx2;
+    background-color: var(--purple500);
+    color:var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.bx2 h2{
+    font-size: 3rem;
+    line-height: .9;
+    max-width: 90%;
+    justify-self: start;
+    font-weight: 400;
+    white-space: pre;
+    margin-top: 20px;
+}
+.bx2 span{
+    color: var(--yellow500)
+}
+.bx2 img{
+    max-width: 40%;
+}
+
+.bx3{
+    grid-area: bx3;
+    background-color: var(--purple100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.bx3 h2{
+    max-width: 80%;
+}
+.bx3 img{
+    width: 120%;
+    align-self: start;
+    margin-left: 50px;
+}
+.bx3 p{
+    white-space: pre;
+}
+.bx4{
+    grid-area: bx4;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bx4 img{
+    max-width: 120%;
+    align-self: start;
+    margin-left: 28px;
+}
+.bx4 h2{
+    max-width: 80%;
+    white-space: pre;
+}
+.bx5{
+    grid-area: bx5;
+    background-color: var(--yellow500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bx5 h2{
+    max-width: 80%;
+}
+.bx5 img{
+    max-width: 80%;
+    margin-top: 10px;
+}
+.bx6{
+    grid-area: bx6;
+    background-color: var(--yellow500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+.bx6 h2{
+    max-width: 80%;
+    margin-bottom: 10px;
+}
+.bx6 img{
+    max-width: 80%;
+}
+.bx7{
+    grid-area: bx7;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.bx7 h2{
+    width: 50%;
+    font-size: 3rem;
+    font-weight: 400;
+    align-self: start;
+    margin-left: 20px;
+}
+.bx7 img{
+    max-width: 80%;
+    margin-top: 20px;
+}
+.bx8{
+    grid-area: bx8;
+    background-color: var(--purple500);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bx8 img {
+    max-width: 40%;
+}
+.bx8 h2{
+    color:var(--white);
+    width: 50%;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+@media (max-width: 390px){
+    .main{
+        gap:20px;
+        grid-template-rows: auto;
+        grid-template-columns: 90%;
+        grid-template-areas:"bx2"
+                            "bx4"
+                            "bx5"
+                            "bx3"
+                            "bx8"
+                            "bx7"
+                            "bx1"
+                            "bx6"
+    }
+    
+    .bx2{
+        justify-content: space-evenly;
+    }
+    .bx2 h2{
+        font-size:3rem;
+        white-space: pre;
+        line-height: .9;
+    }
+    .bx2 img{
+        max-width: 60%;
+    }
+    .bx2 {
+        padding-bottom: 20px;
+    }
+    .bx4{
+        max-height: fit-content;
+        padding-bottom: 10px;
+    }
+    .bx4 img{
+        max-width: 100%;
+    }
+    .bx4 h2 {
+        white-space: normal;
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .bx5 h2 {
+        white-space: normal;
+        width: 100%;
+        font-size: 1.3rem;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .bx5{
+        max-height: fit-content;
+        align-items: start;
+    }
+    .bx5 img{
+        margin-left: 20px;
+        max-width: 60%;
+
+    }
+    .bx3{
+        padding: 10px;
+        padding-bottom: 20px;
+    }
+    .bx3 img{
+        max-width: 80%;
+        align-self: center;
+        margin: 0;
+        margin-top: 10px;
+    }
+    .bx3 h2{
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .bx3 p{
+        font-size: 1rem;
+        width: 80%;
+        white-space: normal;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .bx8{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .bx8 h2{
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    .bx8 img{
+        max-width: 65%;
+        margin-bottom: 10px;
+    }
+    .bx7 p{
+        text-align: start;
+        width: 100%;
+        margin-left:50px;
+    }
+    .bx7 {
+        max-height: fit-content;
+        padding-bottom: 20px;
+    }
+    .bx7 img{
+        max-width: 60%;
+        align-self: start;
+        margin-left: 30px;
+    }
+    .bx1 h2{
+        font-size: 1.3rem;
+        line-height: .9;
+        width: 100%;
+    }
+    .bx1 img{
+        max-width: 60%;
+    }
+    .bx1{
+        justify-content: start;
+        max-height: fit-content;
+        padding: 25px;
+        align-items: start;
+    }
+
+    .bx6 img{
+        max-width: 70%;
+        margin-left: 10px;
+    }
+    .bx6 h2{
+        line-height: .9;
+        margin-left: 10px;
+        font-weight: 500;
+    }
+    .bx6{
+        align-items: start;
+    }
+
+}
